@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Jason's Voice Note App",
-  description: 'Record and transcribe your voice notes with ease',
+  title: "Luke's Daily Checklists",
+  description: 'Morning and nighttime routine checklist app',
 };
 
 export default function RootLayout({
