@@ -34,7 +34,7 @@ export default function ChecklistPage({ title, items }: ChecklistPageProps) {
   const sendEmail = async (checklistResults: any[]) => {
     // Create email content
     const templateParams = {
-      to_emails: 'techmdjason@gmail.com, hbjules8@yahoo.com', // Multiple recipients in one string
+      to_emails: 'techmdjason@gmail.com, hbjules8@yahoo.com',
       subject: `Luke's ${title} Checklist - ${format(new Date(), 'PPP')}`,
       checklist_type: title,
       checklist_items: checklistResults.map(result => 
@@ -44,7 +44,6 @@ export default function ChecklistPage({ title, items }: ChecklistPageProps) {
     };
 
     try {
-      // Single email send with multiple recipients
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -66,7 +65,7 @@ export default function ChecklistPage({ title, items }: ChecklistPageProps) {
     }));
 
     try {
-      // Save to Firebase
+      // Save to Firebase without wrapping in a data object
       await addDocument('checklists', {
         type: title,
         timestamp,

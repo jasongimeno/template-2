@@ -36,7 +36,7 @@ export const getDocuments = async (collectionName: string) => {
   const querySnapshot = await getDocs(collection(db, collectionName));
   return querySnapshot.docs.map(doc => ({
     id: doc.id,
-    ...doc.data()
+    data: doc.data()
   }));
 };
 
