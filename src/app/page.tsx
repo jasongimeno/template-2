@@ -63,6 +63,15 @@ export default function Home() {
         >
           Nighttime Routine
         </Link>
+
+        <div className="pt-8 text-center">
+          <Link 
+            href="/history"
+            className="text-gray-600 hover:text-gray-900 text-sm underline transition-colors"
+          >
+            View History
+          </Link>
+        </div>
       </div>
     </main>
   );
